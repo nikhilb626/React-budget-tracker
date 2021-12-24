@@ -1,0 +1,246 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+
+
+.heading{
+  width:fit-content;
+  font-size:1.6rem;
+  margin: 10px auto;
+  color:rgb(117, 117, 117);
+}
+
+
+.balance_container{
+  display:flex;
+  justify-content: space-around;
+}
+
+.budget,.remaining,.spent{
+  min-width: 250px;
+  background:rgb(229, 229, 255);
+  height: 50px;
+  border-radius:5px;
+
+}
+
+
+.edited,.editing{
+  width:100%;
+  justify-content: space-around;
+  font-size:1.3rem;
+  text-align: justify;
+  padding: 8px;
+  font-weight:500;
+
+}
+
+.edited span{
+  margin-right: 5px;
+  font-weight:500;
+
+}
+
+
+.edited button,.editing button{
+  margin-left: 60px;
+  padding:4px 6px;
+  font-size:0.8rem;
+  letter-spacing:2px;
+  font-weight:bold;
+  color:white;
+  background:rgb(102, 102, 209);
+}
+
+
+
+.editing input{
+  width:110px;
+  height:30px;
+  border:none;
+  outline:none;
+}
+
+.editing input[type="number"]{
+  font-size: 1.3rem;
+  color:rgb(139, 139, 139);
+  padding-left:2px;
+}
+
+
+
+
+.expense_heading{
+  font-size:1.7rem;
+  font-weight:bold;
+  margin: 30px;
+  border-left:3px solid rgb(55, 55, 204); 
+  padding-left:10px;
+  margin-top: 70px;
+}
+
+.search{
+  width: 80%;
+  margin:5px auto;
+text-align: center;
+}
+
+.search input{
+
+  width: 400px;
+  padding: 4px 6px;
+  font-size:1.2rem;
+outline:none;
+border:1px solid rgb(202, 202, 202);
+}
+
+.search input::placeholder{
+  color:rgb(161, 161, 161);
+}
+
+
+.search input:focus{
+  border:1px solid blue;
+  outline:none;
+}
+
+
+.expense_list{
+  width:100vw;
+  justify-content: center;
+}
+
+.expense_list ul{
+  margin-top:30px;
+}
+
+.expense_list ul li{
+  display:flex;
+  justify-content: space-between;
+  width:45%;
+  margin:0px auto;
+border:1px solid rgb(209, 209, 209);
+padding:6px 8px;
+font-weight: 600;
+cursor:pointer;
+}
+
+.exp{
+  width: 30%;
+}
+
+.expname{
+  width: 30%;
+
+}
+
+
+
+
+.add{
+  width:100vw;
+  text-align:center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  display:flex;
+}
+
+.add input{
+  margin: 10px;
+  padding: 4px 6px;
+  width: 250px;
+  height:40px;
+  outline:none;
+}
+
+.add input::placeholder{
+  font-size: 1rem;
+  font-weight: 600;
+  color:rgb(179, 179, 179);
+  padding-left:5px;
+
+}
+
+.add input:focus{
+  border: 1px solid rgb(4, 4, 202);
+}
+
+.add button{
+  padding: 4px 6px;
+  font-size: 1rem;
+  height: 40px;
+  width: 70px;
+  background: rgb(92, 92, 212);
+  color:white;
+  font-weight: bold;
+}
+
+
+.add input[type="text"],.add input[type="number"]{
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.remaining,.spent{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-top:10px;
+  font-size:1.2rem;
+  font-weight:500;
+}
+
+.remaining{
+  color:green;
+}
+
+.spent{
+  color:blue;
+}
+
+.exp{
+  color:rgb(224, 7, 7);
+  font-weight:bolder;
+
+}
+
+.expname{
+  font-weight:bolder;
+
+  color:rgb(131, 131, 131);
+}
+
+
+.expense_list div{
+  font-weight:bolder;
+}
+
+
+@media only screen and (max-width: 780px){
+  .balance_container{
+    flex-direction:column;
+  }
+
+  .add{
+    flex-direction:column;
+  }
+
+  .expense_list ul li{
+    width: 90%;
+    padding:20px;
+    font-size: 1.2rem;
+  }
+
+  .search input{
+    width: 98%;
+  }
+
+  .add button{
+    margin-bottom: 30px;
+    width: 250px;
+  }
+}
