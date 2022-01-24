@@ -19,20 +19,20 @@ export const GlobalContext=createContext(initialState);
 
 export const GlobalProvider=({children})=>{
     const [state,dispatch]=useReducer(AppReducer,initialState
-        ,()=>{
-            const stickyValue = window.localStorage.getItem("expense");
-            return stickyValue !== null
-              ? JSON.parse(stickyValue)
-              : [];
-        }
+        // ,()=>{
+        //     const stickyValue = window.localStorage.getItem("expense");
+        //     return stickyValue !== null
+        //       ? JSON.parse(stickyValue)
+        //       : [];
+        // }
     );
 
 
 
 
-    useEffect(()=>{
-        localStorage.setItem("expense",JSON.stringify(state));
-    },[state]);
+    // useEffect(()=>{
+    //     localStorage.setItem("expense",JSON.stringify(state));
+    // },[state]);
 
     function addTransaction(transaction){
         dispatch({
