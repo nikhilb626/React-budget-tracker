@@ -5,8 +5,8 @@ import AppReducer from "./AppReducer";
 
 // initial state
 const initialState={
-    expenses:[],
-    budget:0
+    expenses:[]
+    // budget:0
 }
 
 
@@ -18,9 +18,17 @@ export const GlobalContext=createContext(initialState);
 // provider component
 
 export const GlobalProvider=({children})=>{
-    const [state,dispatch]=useReducer(AppReducer,initialState,()=>{
-        return JSON.parse(localStorage.getItem("expense"))
-    });
+    const [state,dispatch]=useReducer(AppReducer,initialState
+        ,()=>{
+            const stickyValue = window.localStorage.getItem("expense");
+            return stickyValue !== null
+              ? JSON.parse(stickyValue)
+              : [];
+        }
+    );
+
+
+
 
     useEffect(()=>{
         localStorage.setItem("expense",JSON.stringify(state));
